@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.attribution {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+  padding: 10px 0;
+}
+body {
+  background-image: url(./assets/images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-color: var(--Light-pink);
+  background-position: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Work Sans", sans-serif;
+}
+.container {
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  color: var(--Dark-purple);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.question {
+  border-bottom: 2px solid var(--Grayish-purple);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+.faqs {
+  font-size: 3rem;
+  font-weight: 800;
+}
+.main-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.answer-text {
+  color: var(--Grayish-purple);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.question.active .answer-text {
+    max-height: 500px; /* You can adjust this value based on your content */
+    opacity: 1;
+  }
+.icon-andfaq {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.opener {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.minus{
+    display: none;
+}
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light-pink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Dark-purple: hsl(292, 42%, 14%);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media(max-width: 600px){
+    body{
+        padding: 0px 20px;
+    }
+    .container {
+        padding: 40px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 600px;
+        background-color: white;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        color: var(--Dark-purple);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .opener{
+        gap: 25px;
+      }
+}
