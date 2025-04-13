@@ -8,13 +8,10 @@ const monthResult = document.querySelector(".month-value");
 const yearResult = document.querySelector(".year-value");
 const allErrors = document.querySelectorAll("small");
 const error = document.querySelector(".error");
-// console.log(field)
 const date = new Date();
 const dateChecker = () => {
   let valid = true;
-
   allErrors.forEach((err) => (err.textContent = ""));
-
   [day, month, year].forEach((input) => {
     const parent = input.closest(".field");
     const label = parent.querySelector("label");
