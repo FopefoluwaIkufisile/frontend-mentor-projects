@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <form action="" class="form-container">
+        <div class="horizontal">
+          <div class="day-div field">
+            <label for="day">DAY</label>
+            <input
+              type="text"
+              name="day"
+              id="day"
+              placeholder="DD"
+              maxlength="2"
+              size="2"
+            />
+            <small class="error">This field is required</small>
+          </div>
+          <div class="month-div field">
+            <label for="month">MONTH</label>
+            <input
+              type="text"
+              name="month"
+              id="month"
+              placeholder="MM"
+              maxlength="2"
+              size="2"
+            />
+            <small class="error">This field is required</small>
+          </div>
+          <div class="year-div field">
+            <label for="year">YEAR</label>
+            <input
+              type="text"
+              name="year"
+              id="year"
+              placeholder="YYYY"
+              maxlength="4"
+              size="4"
+              field
+            />
+            <small class="error">This field is required</small>
+          </div>
+        </div>
+        <div class="line-cont">
+          <div class="line"></div>
+          <button type="submit" class="submit">
+            <img src="./assets/images/icon-arrow.svg" alt="" />
+          </button>
+        </div>
+      </form>
+      <div class="result">
+        <div class="year-result">
+          <p class="year-text text">
+            <span class="year-value purple">--</span> years
+          </p>
+        </div>
+        <div class="month-result">
+          <p class="month-text text">
+            <span class="month-value purple">--</span> months
+          </p>
+        </div>
+        <div class="day-result">
+          <p class="day-text text">
+            <span class="day-value purple">--</span> days
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Ikufisile Fopefoluwa</a>.
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
