@@ -13,10 +13,8 @@ const date = new Date();
 const dateChecker = () => {
   let valid = true;
 
-  // Reset all errors
   allErrors.forEach((err) => (err.textContent = ""));
 
-  // Required + basic number check
   [day, month, year].forEach((input) => {
     const parent = input.closest(".field");
     const label = parent.querySelector("label");
@@ -73,32 +71,33 @@ const dateChecker = () => {
         valid = false;
       }
     }
-    const birthDate = new Date(`${y}-${m}-${d}`);
 
-    console.log(new Date())
-  
-    let ageYears = date.getFullYear() - birthDate.getFullYear();
-    let ageMonths = date.getMonth() - birthDate.getMonth();
-    let ageDays = date.getDate() - birthDate.getDate();
-  
-    if (ageDays < 0) {
-      ageMonths--;
-      const prevMonth = new Date(date.getFullYear(), date.getMonth(), 0);
-      ageDays += prevMonth.getDate();
+    if (valid) {
+      const birthDate = new Date(`${y}-${m}-${d}`);
+
+      let ageYears = date.getFullYear() - birthDate.getFullYear();
+
+      let ageMonths = date.getMonth() - birthDate.getMonth();
+
+      let ageDays = date.getDate() - birthDate.getDate();
+
+      if (ageDays < 0) {
+        ageMonths--;
+        const prevMonth = new Date(date.getFullYear(), date.getMonth(), 0);
+        ageDays += prevMonth.getDate();
+      }
+
+      if (ageMonths < 0) {
+        ageYears--;
+        ageMonths += 12;
+      }
+      dayResult.textContent = ageDays;
+      monthResult.textContent = ageMonths;
+      yearResult.textContent = ageYears;
     }
-  
-    if (ageMonths < 0) {
-      ageYears--;
-      ageMonths += 12;
-    }
-  
-    // Show result
-    dayResult.textContent = ageDays;
-    monthResult.textContent = ageMonths;
-    yearResult.textContent = ageYears;
+
+    return valid;
   }
-
-  return valid;
 };
 
 submitBtn.addEventListener("click", (e) => {
