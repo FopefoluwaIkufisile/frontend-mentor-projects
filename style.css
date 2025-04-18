@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+.attribution a {
+  color: var(--green-300);
+  text-decoration: none;
+}
+:root {
+  --blue-200: hsl(193, 38%, 86%);
+  --green-300: hsl(150, 100%, 66%);
+  --blue-600: hsl(217, 19%, 38%);
+  --blue-900: hsl(217, 19%, 24%);
+  --blue-950: hsl(218, 23%, 16%);
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: var(--blue-950);
+  font-family: "Manrope", sans-serif;
+}
+.container {
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: var(--blue-900);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 50px 40px;
+  text-align: center;
+  color: var(--blue-200);
+  border-radius: 10px;
+  gap: 30px;
+}
+.desktop-line {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.mobile-line {
+  display: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.shuffle-btn {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55px;
+  height: 55px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: var(--green-300);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease transform 0.3s ease;
+}
+
+.shuffle-btn:hover {
+  box-shadow: 0 0 15px 5px var(--green-300);
+  transform: translateX(-50%) scale(1.1);
+}
+.advice-head {
+  color: var(--green-300);
+  letter-spacing: 4px;
+}
+.advice-body {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+@media (max-width: 400px) {
+  .advice-head {
+    color: var(--green-300);
+    letter-spacing: 4px;
+  }
+  .advice-body {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .mobile-line {
+    display: block;
+  }
+  .desktop-line {
+    display: none;
+  }
+}
