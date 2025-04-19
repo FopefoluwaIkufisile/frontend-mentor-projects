@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.attribution {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+:root {
+  --red-500: hsl(356, 100%, 66%);
+  --red-400: hsl(355, 100%, 74%);
+  --blue-900: hsl(208, 49%, 24%);
+  --white: hsl(0, 100%, 100%);
+  --gray-600: hsl(207, 13%, 34%);
+  --gray-900: hsl(240, 10%, 16%);
+  --orange-300: hsl(13, 100%, 72%);
+  --red-550: hsl(353, 100%, 62%);
+  --purple-950: hsl(237, 17%, 21%);
+  --purple-900: hsl(237, 23%, 31%);
+  --font-size-body: 16px;
+}
+body {
+  font-family: "Overpass", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+}
