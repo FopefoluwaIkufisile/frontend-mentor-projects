@@ -7,114 +7,129 @@ import FromUpAboveVr from "../assets/desktop/image-from-above.jpg";
 import PocketBorealis from "../assets/desktop/image-pocket-borealis.jpg";
 import TheCuriosity from "../assets/desktop/image-curiosity.jpg";
 import MakeItFisheye from "../assets/desktop/image-fisheye.jpg";
+import { motion } from "framer-motion";
 
 const Creations = () => {
   return (
-    <div className="border-2 border-green-300">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="top flex justify-center sm:justify-between py-3 items-center ">
-          <p className="text-3xl font-josefin tracking-tight font-light">
+    <div className="">
+      <div className="mx-auto max-w-6xl px-6 sm:px-4">
+        <div className="top flex items-center justify-center py-3 sm:justify-between">
+          <p className="font-josefin text-3xl font-light tracking-tight">
             OUR CREATIONS
           </p>
           <a
             href="#"
-            className="border-2 border-gray-500 px-10 py-2 tracking-widest hidden sm:block"
+            className="hidden border-2 border-gray-500 px-10 py-2 tracking-widest sm:block"
           >
             SEE ALL
           </a>
         </div>
-        <div className="mt-10 mb-10 sm:mb-30 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 creations grid  gap-6">
-          <div className="group relative h-[150px] sm:h-[400px] hover:cursor-pointer">
+        <div className="creations mt-10 mb-10 grid grid-cols-1 gap-6 sm:mb-30 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <motion.div initial={{opacity: 0, y:-50, x:-50}} whileInView={{opacity: 1, y:0, x:0}} 
+          transition={{duration: 0.6}} 
+          viewport={{once: true, amount: 0.1}} className="group relative h-[150px] hover:cursor-pointer sm:h-[400px]">
             <img
               src={DeepEarth}
               alt=""
-              className="w-full h-full object-cover brightness-70 group-hover:opacity-40"
+              className="h-full w-full object-cover brightness-70 group-hover:opacity-40"
             />
-            <p className="absolute bottom-7 left-5 text-white text-3xl font-josefin font-thin tracking-tight group-hover:text-black group-hover:font-light ">
+            <p className="absolute bottom-7 left-5 font-josefin text-3xl font-thin tracking-tight text-white group-hover:font-light group-hover:text-black">
               DEEP EARTH
             </p>
-          </div>
-          <div className=" group relative  h-[150px] sm:h-[400px] hover:cursor-pointer">
+          </motion.div>
+          <motion.div  initial={{opacity: 0, y:-50, x:-50}} whileInView={{opacity: 1, y:0, x:0}} 
+          transition={{duration: 0.6, delay: 0.3}} 
+          viewport={{once: true, amount: 0.1}}  className="group relative h-[150px] hover:cursor-pointer sm:h-[400px]">
             <img
               src={NightArcade}
               alt=""
-              className="w-full h-full object-cover brightness-70 group-hover:opacity-40"
+              className="h-full w-full object-cover brightness-70 group-hover:opacity-40"
             />
-            <p className="absolute bottom-7 left-5 text-white text-3xl font-josefin font-thin tracking-tight group-hover:text-black group-hover:font-light">
+            <p className="absolute bottom-7 left-5 font-josefin text-3xl font-thin tracking-tight text-white group-hover:font-light group-hover:text-black">
               NIGHT ARCADE
             </p>
-          </div>
-          <div className="group relative  h-[150px] sm:h-[400px] hover:cursor-pointer">
+          </motion.div>
+          <motion.div initial={{opacity: 0, y:-50, x:-50}} whileInView={{opacity: 1, y:0, x:0}} 
+          transition={{duration: 0.6, delay: 0.6}} 
+          viewport={{once: true, amount: 0.1}} className="group relative h-[150px] hover:cursor-pointer sm:h-[400px]">
             <img
               src={SoccerTeamVr}
               alt=""
-              className="w-full h-full object-cover brightness-70 object-top group-hover:opacity-40"
+              className="h-full w-full object-cover object-top brightness-70 group-hover:opacity-40"
             />
-            <p className="absolute bottom-7 left-5 text-white text-3xl font-josefin font-thin tracking-tight group-hover:text-black group-hover:font-light">
+            <p className="absolute bottom-7 left-5 font-josefin text-3xl font-thin tracking-tight text-white group-hover:font-light group-hover:text-black">
               SOCCER TEAM VR
             </p>
-          </div>
-          <div className="group relative  h-[150px] sm:h-[400px] hover:cursor-pointer">
+          </motion.div>
+          <motion.div initial={{opacity: 0, y:-50, x:-50}} whileInView={{opacity: 1, y:0, x:0}} 
+          transition={{duration: 0.6, delay: 0.9}} 
+          viewport={{once: true, amount: 0.1}} className="group relative h-[150px] hover:cursor-pointer sm:h-[400px]">
             <img
               src={TheGrid}
               alt=""
-              className="w-full h-full object-cover brightness-70 group-hover:opacity-40"
+              className="h-full w-full object-cover brightness-70 group-hover:opacity-40"
             />
-            <p className="absolute bottom-7 left-5 text-white text-3xl font-josefin font-thin tracking-tight group-hover:text-black group-hover:font-light">
+            <p className="absolute bottom-7 left-5 font-josefin text-3xl font-thin tracking-tight text-white group-hover:font-light group-hover:text-black">
               THE GRID
             </p>
-          </div>
-          <div className="group relative h-[150px] sm:h-[400px] hover:cursor-pointer">
+          </motion.div>
+          <motion.div initial={{opacity: 0, y:-50, x:-50}} whileInView={{opacity: 1, y:0, x:0}} 
+          transition={{duration: 0.6, delay: 0}} 
+          viewport={{once: true, amount: 0.1}} className="group relative h-[150px] hover:cursor-pointer sm:h-[400px]">
             <img
               src={FromUpAboveVr}
               alt=""
-              className="w-full h-full object-cover brightness-70 group-hover:opacity-40"
+              className="h-full w-full object-cover brightness-70 group-hover:opacity-40"
             />
-            <p className="absolute bottom-7 left-5 text-white text-3xl font-josefin font-thin tracking-tight group-hover:text-black group-hover:font-light">
+            <p className="absolute bottom-7 left-5 font-josefin text-3xl font-thin tracking-tight text-white group-hover:font-light group-hover:text-black">
               FROM UP ABOVE VR
             </p>
-          </div>
-          <div className="group relative  h-[150px] sm:h-[400px] hover:cursor-pointer">
+          </motion.div>
+          <motion.div initial={{opacity: 0, y:-50, x:-50}} whileInView={{opacity: 1, y:0, x:0}} 
+          transition={{duration: 0.6, delay: 0.3}} 
+          viewport={{once: true, amount: 0.1}} className="group relative h-[150px] hover:cursor-pointer sm:h-[400px]">
             <img
               src={PocketBorealis}
               alt=""
-              className="w-full h-full object-cover brightness-70 group-hover:opacity-40"
+              className="h-full w-full object-cover brightness-70 group-hover:opacity-40"
             />
-            <p className="absolute bottom-7 left-5 text-white text-3xl font-josefin font-thin tracking-tight group-hover:text-black group-hover:font-light">
+            <p className="absolute bottom-7 left-5 font-josefin text-3xl font-thin tracking-tight text-white group-hover:font-light group-hover:text-black">
               POCKET BOREALIS
             </p>
-          </div>
-          <div className="group relative  h-[150px] sm:h-[400px] hover:cursor-pointer">
+          </motion.div>
+          <motion.div initial={{opacity: 0, y:-50, x:-50}} whileInView={{opacity: 1, y:0, x:0}} 
+          transition={{duration: 0.6, delay: 0.6}} 
+          viewport={{once: true, amount: 0.1}} className="group relative h-[150px] hover:cursor-pointer sm:h-[400px]">
             <img
               src={TheCuriosity}
               alt=""
-              className="w-full h-full object-cover brightness-70 group-hover:opacity-40"
+              className="h-full w-full object-cover brightness-70 group-hover:opacity-40"
             />
-            <p className="absolute bottom-7 left-5 text-white text-3xl font-josefin font-thin tracking-tight group-hover:text-black group-hover:font-light">
+            <p className="absolute bottom-7 left-5 font-josefin text-3xl font-thin tracking-tight text-white group-hover:font-light group-hover:text-black">
               THE CURIOSITY
             </p>
-          </div>
-          <div className="group relative  h-[150px] sm:h-[400px] hover:cursor-pointer">
+          </motion.div>
+          <motion.div initial={{opacity: 0, y:-50, x:-50}} whileInView={{opacity: 1, y:0, x:0}} 
+          transition={{duration: 0.6, delay:0.9}} 
+          viewport={{once: true, amount: 0.1}} className="group relative h-[150px] hover:cursor-pointer sm:h-[400px]">
             <img
               src={MakeItFisheye}
               alt=""
-              className="w-full h-full object-cover brightness-70 group-hover:opacity-40"
+              className="h-full w-full object-cover brightness-70 group-hover:opacity-40"
             />
-            <p className="absolute bottom-7 left-5 text-white text-3xl font-josefin font-thin tracking-tight group-hover:text-black group-hover:font-light">
+            <p className="absolute bottom-7 left-5 font-josefin text-3xl font-thin tracking-tight text-white group-hover:font-light group-hover:text-black">
               MAKE IT FISHEYE
             </p>
-          </div>
-          
+          </motion.div>
         </div>
         <div className="flex justify-center sm:hidden">
-        <a
+          <a
             href="#"
-            className="border-2 border-gray-500 px-10 py-2 tracking-widest mb-30"
+            className="mb-30 border-2 border-gray-500 px-10 py-2 tracking-widest"
           >
             SEE ALL
           </a>
         </div>
-  
       </div>
     </div>
   );
