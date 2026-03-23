@@ -17,18 +17,6 @@ const date = new Date().getFullYear();
 
 const lastTwoDigits = Number(date.toString().split("").slice(2, 4).join(""));
 
-if (!localStorage.getItem("formdata")) {
-  localStorage.setItem(
-    "formdata",
-    JSON.stringify({
-      "cardholder-name": fullName.value,
-      "card-number": numberInput.value,
-      month: month.value,
-      year: year.value,
-      cvc: cvc.value,
-    })
-  );
-}
 
 const existingData = JSON.parse(localStorage.getItem("formdata")) || {};
 
