@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+
+:root{
+    --bg-color: hsl(30, 54%, 90%);
+    --container-color: hsl(0, 0%, 100%);
+    --preparation-bgcolor: hsl(330, 100%, 98%);
+    --preparation-textcolor: hsl(332, 51%, 32%);
+    --ingredients-textcolor: hsl(14, 45%, 36%);
+    --lists-textcolor: hsl(30, 10%, 34%);
+    --links-textcontcolor: hsl(24, 5%, 18%);
+}
+.attribution{
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid white;
+    bottom: 0;
+    text-align: center;
+}
+.attribution a{
+    color: var(--ingredients-textcolor);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: "Outfit", serif;
+    background-color: var(--bg-color);
+    font-size: 14px;
+}
+.omelette-container{
+    /* width: 45%; */
+    max-width: 500px;
+    background-color: var(--container-color);
+    padding: 30px 30px;
+    border-radius: 15px;
+    margin: 50px auto;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.omelette-image{
+    width: 100%;
+}
+.simple{
+    font-weight: 100;
+}
+.young{
+ font-family: "Young Serif", serif;
+ font-size: 25px;
+}
+.ingredients-links{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.248);
+}
+.instructions-links{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.248);
+}
+.prep-links{
+    background-color: var(--preparation-bgcolor);
+    color: var(--preparation-textcolor);
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+.bold{
+    color: var(--links-textcontcolor);
+    font-weight: 600;
+}
+.preparation li{
+  margin-bottom: 10px;
+}
+.ingredients li{
+  margin-bottom: 8px;
+}
+.instructions li{
+  margin-bottom: 7px;
+}
+li, .grey{
+    color: var(--lists-textcolor);
+}
+.preparation-title{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.ingredients{
+    padding: 20px 0;
+}
+.instructions{
+    padding: 20px 0;
+}
+.nutrition-title{
+    margin-bottom: 10px;
+}
+ul, ol {
+    list-style-position: inside;
+}
+li::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+}
+table{
+    width: 100%;
+    margin-top: 10px;
+}
+td{
+    padding: 13px 0;
+    border-bottom: 1px solid gray;
+}
+.last{
+    border: none;
+}
+.left{
+    padding-left: 10px;
+}
+.brown{
+    color: var(--ingredients-textcolor);
+    font-weight: 600;
+}
+@media(max-width:500px){
+    .omelette-container{
+        padding-top: 0;
+        margin: 0;
+        border-radius: 0;
+        padding: 0;
+    }
+  .content{
+    padding: 15px 30px;
+  }
+  .attribution{
+    display: none;
+  }
+}
