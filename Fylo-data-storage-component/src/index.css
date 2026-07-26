@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --gradient-start: hsl(6, 100%, 80%);
+  --gradient-end: hsl(335, 100%, 65%);
+
+  /* Neutral Colors */
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+}
+
+@theme {
+  --color-background: hsl(229, 57%, 11%);
+  --color-card-background: hsl(228, 56%, 26%);
+  --color-pale-blue: hsl(243, 100%, 93%);
+  --color-gray: hsl(229, 7%, 55%);
+  --font-raleway: "Raleway", sans-serif;
+}
+
+#slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px 2px hsl(335, 100%, 65%);
+}
+
+.tool-tip::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 40px solid white; /* height */
+  border-left: 40px solid transparent;
+  z-index: 100;
+}
+@media (max-width: 640px) {
+  .tool-tip::after {
+    display: none;
+  }
+}
