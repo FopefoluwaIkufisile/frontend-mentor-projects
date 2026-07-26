@@ -8,23 +8,18 @@ set -a
 METADATA_FILE=$(mktemp)
 
 getProjects() {
-    # 1. Fetch JSON from Google Sheets
     response=$(curl -s "https://sheets.googleapis.com/v4/spreadsheets/$SPREADSHEET_ID/values/$RANGE?key=$API_KEY")
 
-    # 2. Extract Repo URL (index 2) and Image URL (index 4) separated by a delimiter pipe '|'
-    projects=$(echo "$response" | jq -r '.values[0:8] | map(select(.[4] == "Frontend Mentor")) | .[] | "\(.[2])|\(.[4])"')
+    projects=$(echo "$response" | jq -r '.values | map(select(.[4] == "Frontend Mentor")) | .[] | "\(.[2])|\(.[5])"')
 
     echo "$projects" | while IFS='|' read -r project_url image_url; do
         [ -z "$project_url" ] && continue
 
-        # Clean project directory name (strip .git and leading dashes)
         clean_name=$(basename "$project_url" .git | sed 's/^[ -]*//')
 
-        # Record project info for building index.html (folder_name|title|image_url)
         formatted_title=$(echo "$clean_name" | sed 's/Frontend-Mentor-//g' | tr '-' ' ')
         echo "$clean_name|$formatted_title|$image_url" >>"$METADATA_FILE"
 
-        # Check if project already exists in monorepo
         if [ -d "$clean_name" ]; then
             echo "--> Skipping $clean_name (folder already exists)"
             continue
@@ -151,7 +146,6 @@ generateIndex() {
   <main class="grid" id="projectGrid">
 EOF
 
-    # Loop through the parsed metadata file to output cards
     while IFS='|' read -r folder title image; do
         [ -z "$folder" ] && continue
         cat <<EOF >>index.html
