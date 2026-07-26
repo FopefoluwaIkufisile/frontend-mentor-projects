@@ -5,7 +5,7 @@ source .env
 set -a
 
 getProjectsUrls() {
-    projects=$(curl -s "https://sheets.googleapis.com/v4/spreadsheets/$SPREADSHEET_ID/values/$RANGE?key=$API_KEY" | jq -r '.values[0:8] | map(select(.[4] == "Frontend Mentor")) | map(.[2])[]')
+    projects=$(curl -s "https://sheets.googleapis.com/v4/spreadsheets/$SPREADSHEET_ID/values/$RANGE?key=$API_KEY" | jq -r '.values | map(select(.[4] == "Frontend Mentor")) | map(.[2])[]')
 
     echo "$projects" | while IFS= read -r project; do
         [ -z "$project" ] && continue
