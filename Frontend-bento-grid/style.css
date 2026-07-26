@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple-100: hsl(254, 88%, 90%);
+  --purple-500: hsl(256, 67%, 59%);
+  --yellow-100: hsl(31, 66%, 93%);
+  --yellow-500: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 20px;
+}
+
+/* Attribution Section */
+.attribution {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Main Grid Layout */
+main {
+  display: grid;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  grid-template-rows: 4fr 1fr 2fr 3fr;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  height: 80vh;
+  grid-template-areas:
+    "create  social   social   schedule"
+    "create  manage   maintain schedule"
+    "write   manage   maintain schedule"
+    "write   faster   grow     grow";
+}
+
+/* Box Styling */
+.box {
+  border-radius: 10px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  overflow: hidden;
+}
+
+/* Image Styling */
+.image-container {
+  width: 100px;
+}
+
+img {
+  width: 100%;
+}
+
+/* Section Styles */
+.create {
+  grid-area: create;
+  background-color: var(--yellow-100);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#create {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 40px;
+}
+.create-image-container {
+  width: 100%;
+  align-self: center;
+  cursor: pointer;
+}
+
+.social {
+  grid-area: social;
+  background-color: var(--purple-500);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#social {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.star-img-container {
+  align-self: center;
+  width: 35%;
+}
+
+.gold {
+  color: var(--yellow-500);
+}
+#purple-colour {
+  color: var(--purple-500);
+}
+
+.manage {
+  grid-area: manage;
+}
+#manage {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.manage-img-container {
+  width: 100%;
+  align-self: center;
+  cursor: pointer;
+}
+.manage-img {
+  width: 250px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.maintain {
+  grid-area: maintain;
+  background-color: var(--yellow-500);
+  display: flex;
+  flex-direction: column;
+}
+#maintain {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.maintain-image-container {
+  width: 100%;
+  align-self: center;
+  cursor: pointer;
+}
+.maintain-img {
+  width: 250px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.schedule {
+  grid-area: schedule;
+  background-color: var(--purple-100);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 0px 20px 30px;
+  position: relative;
+}
+#schedule {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.schedule-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.schedule-image {
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 15px;
+}
+
+.grow {
+  background-color: var(--purple-500);
+  grid-area: grow;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  gap: 10px;
+}
+#grow {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.grow-image-container {
+  width: 100%;
+  align-self: center;
+  cursor: pointer;
+}
+.grow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.faster {
+  grid-area: faster;
+  display: flex;
+  flex-direction: column;
+}
+.faster-image-container {
+  width: 90%;
+  align-self: center;
+  cursor: pointer;
+}
+.faster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.big {
+  font-size: 2.5rem;
+}
+
+.write {
+  grid-area: write;
+  background-color: var(--yellow-500);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#write {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.write-image-container {
+  width: 100%;
+  align-self: center;
+  cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 750px) {
+  main {
+    display: grid;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 4fr 1fr 2fr 3fr;
+    gap: 10px;
+    height: 80vh;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .maintain {
+    gap: 10px;
+    position: relative;
+  }
+  .maintain-image-container {
+    width: 40%;
+    cursor: pointer;
+    align-self: flex-start;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+  .schedule {
+    padding: 20px;
+    text-align: center;
+  }
+  .schedule-image-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+  }
+  .schedule-image{
+    width: 100%;
+  }
+  .grow {
+    flex-direction: column;
+    text-align: center;
+  }
+  .grow-image-container {
+    width: 70%;
+    height: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .faster {
+    gap: 10px;
+  }
+  .faster-image-container {
+    width: 40%;
+    height: 100%;
+    border-radius: 6px;
+    align-self: flex-start;
+    cursor: pointer;
+  }
+    .faster-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+    .write-image-container {
+        width: 40%;
+        cursor: pointer;
+        align-self: flex-start;
+        overflow: hidden;
+        border-radius: 6px;
+    }
+    .create-image-container {
+        width: 40%;
+        cursor: pointer;
+        align-self: flex-start;
+        overflow: hidden;
+        border-radius: 6px;
+    }
+  .box{
+    overflow: visible;
+  }
+}
