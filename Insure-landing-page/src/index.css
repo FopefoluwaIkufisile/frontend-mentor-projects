@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "Karla", sans-serif;
+    font-family: "DM Serif Display", serif;
+  }
+}
+
+:root {
+  --blue-950: hsl(256, 26%, 20%);
+  --blue-500: hsl(216, 30%, 68%);
+
+  --gray-950: hsl(270, 9%, 17%);
+  --gray-700: hsl(273, 4%, 51%);
+  --gray-50: hsl(0, 0%, 98%);
+}
+
+@theme inline {
+  --color-blue-deep: var(--blue-950);
+  --color-blue-light: var(--blue-500);
+
+  --color-gray-deep: var(--gray-950);
+  --color-gray-light: var(--gray-700);
+  --color-gray-lightest: var(--gray-50);
+  --font-dm-serif: "DM Serif Display", serif;
+  --font-karla: "Karla", sans-serif;
+}
