@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --Orange-500: hsl(25, 97%, 53%);
+  --White: hsl(0, 100%, 100%);
+  --Grey-500: hsl(217, 12%, 63%);
+  --Grey-900: hsl(213, 19%, 18%);
+  --Grey-950: hsl(216, 12%, 8%);
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  background-color: var(--Grey-950);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--Grey-900);
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 20px;
+}
+.star-container {
+  background-color: var(--Grey-900);
+  align-self: flex-start;
+  padding: 10px 11px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.container-thank-you {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--Grey-900);
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 20px;
+  display: none;
+  align-items: center;
+  text-align: center;
+}
+.selected {
+  background-color: hsl(217, 12%, 63%, 0.2);
+  color: var(--Orange-500);
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.illustrate {
+  height: 100px;
+  align-self: center;
+}
+button {
+  cursor: pointer;
+}
+p {
+  color: gray;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+small{
+    color: red;
+    display: none;
+}
+.number {
+  border-radius: 20px;
+  padding: 15px 20px;
+  color: white;
+  background-color: hsl(217, 12%, 63%, 0.2);
+  border: none;
+  font-weight: bold;
+}
+.number:hover{
+    background-color: var(--Orange-500);
+    color: var(--Grey-900);
+    
+}
+.number:focus{
+    background-color: white;
+    color: var(--Grey-900);
+}
+h1 {
+  font-size: 1.6rem;
+  color: white;
+}
+.submit {
+  background-color: var(--Orange-500);
+  padding: 14px 0px;
+  border: none;
+  border-radius: 20px;
+  color: var(--Grey-900);
+  font-weight: 900;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.attribution {
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+  color: var(--White);
+}
+.attribution a {
+  color: white;
+}
