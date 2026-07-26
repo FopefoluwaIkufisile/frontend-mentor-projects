@@ -9,9 +9,12 @@ getProjectsUrls() {
 
     echo "$projects" | while IFS= read -r project; do
         [ -z "$project" ] && continue
-        project_name=$(basename "$project" .git)
-        echo "--> Importing $project_name from $project..."
-        git subtree add --prefix="$project_name" "$project" main
+
+        raw_name=$(basename "$project" .git)
+        clean_name=$(echo "$raw_name" | sed 's/^-//')
+
+        echo "--> Importing $clean_name from $project..."
+        git subtree add --prefix="./$clean_name" "$project" main
     done
 }
 
