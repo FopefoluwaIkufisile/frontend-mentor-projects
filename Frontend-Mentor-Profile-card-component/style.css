@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.attribution {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+:root {
+  --Dark-cyan: hsl(185, 75%, 39%);
+  --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --Dark-grayish-blue: hsl(227, 10%, 46%);
+  --Dark-gray: hsl(0, 0%, 59%);
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: url(./images/bg-pattern-top.svg),url(./images/bg-pattern-bottom.svg) ;
+  background-position: -100px -400px, 800px 400px;
+  background-size: contain, contain;
+  background-repeat: no-repeat, no-repeat;
+  background-color: var(--Dark-cyan);
+  font-family: "Kumbh Sans", sans-serif;
+}
+.container{
+    background: url(./images/bg-pattern-card.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 170px;
+    background-position: top;
+    border-radius: 10px;
+    padding: 20px 0px;
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+.image-container{
+    padding: 5px;
+    border-radius: 50%;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 100px auto 0;
+}
+h1{
+    color: var(--Very-dark-desaturated-blue);
+    font-size: 1.2rem;
+}
+.grey{
+    color: var(--Dark-grayish-blue);
+    font-weight: 400;
+}
+#victor{
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.stats{
+    display: flex;
+    justify-content: space-around;
+}
+.number{
+    color: var(--Very-dark-desaturated-blue);
+    font-weight: 800;
+}
+#london{
+    color: var(--Dark-grayish-blue);
+    border-color: var(--Dark-gray);
+    border-bottom: 1px solid var(--Dark-gray);
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+.type{
+    color: var(--Dark-grayish-blue);
+}
+@media(max-width: 500px){
+    body{
+        padding: 0 15px;
+    }
+}
