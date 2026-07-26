@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="icon-and-text">
+        <img src="./assets/images/logo.svg" alt="" />
+      </div>
+      <div class="theme">
+        <img src="./assets/images/icon-moon.svg" alt="" class="moon"/>
+        <img src="./assets/images/icon-sun.svg" alt="" class="hide day">
+      </div>
+    </header>
+
+    <section id="extension-list-header">
+      <h2>Extensions List</h2>
+      <div class="filter">
+        <button class="active btn" id="all">All</button>
+        <button class="btn" id="active">Active</button>
+        <button class="btn" id="inactive">Inactive</button>
+      </div>
+    </section>
+
+    <section id="extensions"></section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Ikufisile Fopefoluwa</a>.
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
