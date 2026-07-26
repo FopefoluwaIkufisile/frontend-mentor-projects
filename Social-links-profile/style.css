@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+    --background-color: hsl(0, 0%, 8%);
+    --card-background-color: hsl(0, 0%, 12%);
+    --links-background-color: hsl(0, 0%, 20%);
+    --links-color: hsl(0, 0%, 100%);
+    --location-colour:  hsl(75, 94%, 57%);
+}
+.attribution{
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0;
+    border: 2px solid var(--location-colour);
+    width: 100%;
+}
+.attribution a{
+    color: var(--location-colour);
+    text-decoration: none;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", serif;
+    background-color: var(--background-color);
+    color: var(--links-color);
+}
+.main-name{
+    font-size: 1.2rem;
+}
+.location{
+    font-size: .8rem;
+    color: var(--location-colour);
+}
+.name-location{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.content-box{
+    width: 30%;
+    padding: 30px 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--card-background-color);
+    border-radius: 7px;
+}
+.profile-links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    gap: 15px;
+}
+.main-image{
+    border-radius: 50%;
+    width: 20%;
+}
+.about{
+    font-size: .8rem;
+}
+.content-box a{
+    width: 90%;
+    text-align: center;
+    padding: 15px 0;
+    text-decoration: none;
+    color: var(--links-color);
+    background-color: var(--links-background-color);
+    border-radius: 7px;
+    font-size: .9rem;
+    font-weight: 500;
+    transition: all .3s linear;
+}
+.content-box a:hover{
+    background-color: var(--location-colour);
+    color: var(--card-background-color);
+    transform: translateY(-2px);
+}
+@media(max-width:980px){
+    .content-box{
+        width: 40%;
+    }
+}
+@media(max-width:790px){
+    .content-box{
+        width: 50%;
+    }
+}
+@media(max-width:530px){
+    .content-box{
+        width: 70%;
+    }
+}
+@media(max-width:350px){
+    .content-box{
+        width: 80%;
+    }
+}
+@media(max-width:330px){
+    .content-box{
+        width: 90%;
+    }
+}
