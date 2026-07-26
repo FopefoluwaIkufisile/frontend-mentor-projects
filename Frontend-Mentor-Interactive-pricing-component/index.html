@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive pricing component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="text-case">
+      <p class="main-text">Simple, traffic-based pricing</p>
+      <p class="sub-text">
+        Sign-up for our 30-day trial. No credit card required.
+      </p>
+    </div>
+    <div class="pricing-box">
+      <div class="desktop-text-slider text-slider">
+        <div class="top">
+          <p class="page-text"><span class="page-no">100K</span> PAGEVIEWS</p>
+          <p class="price-text">$<span class="price-no">16</span>.00 <span class="month">/ <span class="type">month</span></span></p>
+        </div>
+        <div class="slider">
+          <input type="range" name="range" id="range" class="slider-inner" min="0" max="6" value="3" />
+        </div>
+      </div>
+      <div class="mobile-text-slider text-slider">
+        <p class="page-text"><span class="page-no">100K</span> PAGEVIEWS</p>
+        <div class="slider">
+          <input type="range" name="range" id="range" class="slider-inner" min="0" max="6" value="3" />
+        </div>
+        <p class="price-text">$<span class="price-no">16</span>.00 <span class="month">/ <span class="type">month</span></span></p>
+      </div>
+      <div class="billing-div">
+        <div class="billing-text">
+          <p class="billing">Monthly Billing</p>
+          <div class="toggle">
+            <div class="toggle-circle"></div>
+          </div>
+          <p class="billing">
+            Yearly Billing
+            <span class="discount"> 25% <span id="d">discount</span></span>
+          </p>
+        </div>
+      </div>
+      <div class="bottom-info">
+        <div class="left-links">
+          <p class="link">
+            <img src="./images/icon-check.svg" alt="" /> Unlimited websites
+          </p>
+          <p class="link">
+            <img src="./images/icon-check.svg" alt="" /> 100% data ownership
+          </p>
+          <p class="link">
+            <img src="./images/icon-check.svg" alt="" /> Email reports
+          </p>
+        </div>
+        <div class="button-div">
+          <button class="start">Start my trial</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Ikufisile Fopefoluwa</a>.
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
