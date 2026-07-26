@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+.background {
+  background: url(../images/pattern-quotes.svg), url(../images/pattern-bg.svg),
+    url(../images/pattern-curve.svg);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 300px 220px, right, bottom left;
+  background-attachment: fixed, fixed, fixed;
+}
+
+@media (max-width: 640px) {
+  .background {
+    background: url(../images/pattern-quotes.svg), url(../images/pattern-bg.svg),
+      url(../images/pattern-curve.svg);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center, 50% 100px, bottom left;
+    background-attachment: fixed, fixed, fixed;
+    background-size: auto,250px ,auto;
+  }
+}
