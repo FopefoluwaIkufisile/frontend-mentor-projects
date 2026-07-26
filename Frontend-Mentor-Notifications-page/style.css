@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.attribution {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 10px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+:root {
+  --red: hsl(1, 90%, 64%);
+  --blue: hsl(219, 85%, 26%);
+  --white: hsl(0, 0%, 100%);
+  --very-light-grayish-blue: hsl(210, 60%, 98%);
+  --light-grayish-blue-1: hsl(211, 68%, 94%);
+  --light-grayish-blue-2: hsl(205, 33%, 90%);
+  --grayish-blue: hsl(219, 14%, 63%);
+  --dark-grayish-blue: hsl(219, 12%, 42%);
+  --very-dark-blue: hsl(224, 21%, 14%);
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--very-light-grayish-blue);
+  padding: 20px 0;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--white);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+}
+.top-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.notifications-tab {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.notifications-text {
+  font-size: 1.6rem;
+}
+.notifications-number {
+  padding: 2px 10px;
+  border-radius: 6px;
+  background-color: var(--blue);
+  color: var(--white);
+}
+.mark {
+  font-size: 1rem;
+  color: var(--dark-grayish-blue);
+  cursor: pointer;
+  font-weight: 500;
+}
+.mark:hover {
+  color: var(--blue);
+}
+.notifications-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.notification {
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.very-light-grayish-blue {
+  background-color: var(--very-light-grayish-blue);
+}
+.profile-pic-container {
+  width: 50px;
+  height: 50px;
+}
+.profile-pic-container img {
+  width: 100%;
+  height: 100%;
+}
+.notification-summary {
+  display: flex;
+  gap: 20px;
+}
+.profile-name {
+  color: var(--very-dark-blue);
+  font-weight: 700;
+}
+.profile-name:hover {
+  color: var(--blue);
+}
+.notification-type {
+  color: var(--dark-grayish-blue);
+  font-weight: 700;
+}
+.notification-type:hover {
+  color: var(--blue);
+}
+.notification-action {
+  color: var(--dark-grayish-blue);
+  font-weight: 400;
+}
+.notification-info-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+.notification-info-text-inner {
+  position: relative;
+}
+.red-dot {
+  display: none;
+}
+.show-red-dot {
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  margin-left: 4px;
+  width: 5px;
+  height: 5px;
+  background-color: var(--red);
+  border-radius: 50%;
+}
+
+.notification-top {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.notification-bottom {
+  padding: 20px;
+  border: 1px solid var(--grayish-blue);
+  color: var(--dark-grayish-blue);
+  font-weight: 500;
+  border-radius: 3px;
+  display: none;
+}
+.notification-bottom:hover {
+  background-color: var(--light-grayish-blue-1);
+}
+.show-block {
+  display: block;
+}
+.blue {
+  color: var(--blue);
+}
+.notification-time {
+  color: var(--grayish-blue);
+}
+.kimberly {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.kimberly .left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.kimberly .right {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+.kimberly .right img {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 0px;
+    display: block;
+  }
+  main {
+    min-height: 100vh;
+  }
+  .notifications-tab {
+    gap: 10px;
+  }
+  .notifications-text {
+    font-size: 1rem;
+  }
+  .mark {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Notifications page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="top-tab">
+        <div class="notifications-tab">
+          <h1 class="notifications-text">Notifications</h1>
+          <span class="notifications-number">3</span>
+        </div>
+        <p class="mark">Mark all as read</p>
+      </div>
+      <div class="notifications-div">
+        <div class="notification very-light-grayish-blue">
+          <div class="notification-summary">
+            <div class="profile-pic-container">
+              <img
+                src="./assets/images/avatar-mark-webber.webp"
+                alt="profile-page"
+              />
+            </div>
+            <div class="notification-info-texts">
+              <div class="notification-top">
+                <p class="notification-info-text-inner">
+                  <span class="profile-name">Mark Webber</span>
+                  <span class="notification-action"
+                    >reacted to your recent post</span
+                  >
+                  <span class="notification-type"
+                    >My first tournament today!</span
+                  ><span class="red-dot"></span>
+                </p>
+                <p class="notification-time">1m ago</p>
+              </div>
+              <div class="notification-bottom">
+                <p class="notification-content">
+                  Thanks for organizing the Chess Club! I've been part of it for a few weeks now and I can already see improvements in my strategies. It's been a great experience!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="notification very-light-grayish-blue">
+          <div class="notification-summary">
+            <div class="profile-pic-container">
+              <img
+                src="./assets/images/avatar-angela-gray.webp"
+                alt="profile-page"
+              />
+            </div>
+            <div class="notification-info-texts">
+              <div class="notification-top">
+                <p class="notification-info-text-inner">
+                  <span class="profile-name">Angela Gray</span
+                  ><span class="notification-action"> followed you</span>
+                  <span class="notification-type"></span
+                  ><span class="red-dot"></span>
+                </p>
+                <p class="notification-time">5m ago</p>
+              </div>
+              <div class="notification-bottom">
+                <p class="notification-content">
+                  I just wanted to say thanks for creating the Chess Club! I've been enjoying it for the last few weeks, and my game has definitely improved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="notification very-light-grayish-blue">
+          <div class="notification-summary">
+            <div class="profile-pic-container">
+              <img
+                src="./assets/images/avatar-jacob-thompson.webp"
+                alt="profile-page"
+              />
+            </div>
+            <div class="notification-info-texts">
+              <div class="notification-top">
+                <p class="notification-info-text-inner">
+                  <span class="profile-name">Jacob Thompson</span>
+                  <span class="notification-action">has joined your group</span>
+                  <span class="notification-type blue">Chess Club</span
+                  ><span class="red-dot"></span>
+                </p>
+                <p class="notification-time">1 day ago</p>
+              </div>
+              <div class="notification-bottom">
+                <p class="notification-content">
+                  I'm really glad I joined the Chess Club! It's been a few weeks now, and I can tell my chess skills have really leveled up. Looking forward to more matches!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="notification">
+          <div class="notification-summary">
+            <div class="profile-pic-container">
+              <img
+                src="./assets/images/avatar-rizky-hasanuddin.webp"
+                alt="profile-page"
+              />
+            </div>
+            <div class="notification-info-texts">
+              <div class="notification-top">
+                <p class="notification-info-text-inner">
+                  <span class="profile-name">Rizky Hasanuddin</span>
+                  <span class="notification-action"
+                    >sent you a private message</span
+                  >
+                  <span class="notification-type"></span
+                  ><span class="red-dot"></span>
+                </p>
+                <p class="notification-time">5 days ago</p>
+              </div>
+              <div class="notification-bottom rizky">
+                <p class="notification-content">
+                  Hello, thanks for setting up the Chess Club. I've been a
+                  member for a few weeks now and I'm already having lots of fun
+                  and improving my game.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="notification">
+          <div class="notification-summary ">
+            <div class="profile-pic-container">
+              <img
+                src="./assets/images/avatar-kimberly-smith.webp"
+                alt="profile-page"
+              />
+            </div>
+            <div class="notification-info-texts">
+              <div class="notification-top kimberly">
+                <div class="left">
+                  <p class="notification-info-text-inner">
+                    <span class="profile-name">Kimberly Smith</span>
+                    <span class="notification-action"
+                      >commented on your picture</span
+                    >
+                    <span class="notification-type"></span
+                    ><span class="red-dot"></span>
+                  </p>
+                  <p class="notification-time">1 week ago</p>
+                </div>
+                <div class="right">
+                  <img src="./assets/images/image-chess.webp" alt="">
+                </div>
+        
+              </div>
+              <div class="notification-bottom">
+                <p class="notification-content">
+                  Shoutout to the Chess Club organizers! I've been a member for a couple of weeks now, and it's been so much fun while also helping me get better at chess.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="notification">
+          <div class="notification-summary">
+            <div class="profile-pic-container">
+              <img
+                src="./assets/images/avatar-nathan-peterson.webp"
+                alt="profile-page"
+              />
+            </div>
+            <div class="notification-info-texts">
+              <div class="notification-top">
+                <p class="notification-info-text-inner">
+                  <span class="profile-name">Nathan Peterson</span>
+                  <span class="notification-action"
+                    >reacted to your recent post</span
+                  >
+                  <span class="notification-type"
+                    >5 end-game strategies to increase your win rate</span
+                  ><span class="red-dot"></span>
+                </p>
+                <p class="notification-time">2 weeks ago</p>
+              </div>
+              <div class="notification-bottom">
+                <p class="notification-content">
+                  Thank you for setting up the Chess Club! It's been a few weeks since I joined, and I'm already seeing a lot of growth in my game. Really enjoying the community!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="notification">
+          <div class="notification-summary">
+            <div class="profile-pic-container">
+              <img
+                src="./assets/images/avatar-anna-kim.webp"
+                alt="profile-page"
+              />
+            </div>
+            <div class="notification-info-texts">
+              <div class="notification-top">
+                <p class="notification-info-text-inner">
+                  <span class="profile-name">Anna Kim</span>
+                  <span class="notification-action">left the group</span>
+                  <span class="notification-type blue">Chess Club</span
+                  ><span class="red-dot"></span>
+                </p>
+                <p class="notification-time">2 weeks ago</p>
+              </div>
+              <div class="notification-bottom">
+                <p class="notification-content">
+                  Big thanks for the Chess Club! I've only been here for a few weeks, but I've already made noticeable improvements in my game. Loving every moment!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Ikufisile Fopefoluwa</a>.
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
