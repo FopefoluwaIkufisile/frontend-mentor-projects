@@ -12,6 +12,11 @@ getProjectsUrls() {
 
         clean_name=$(basename "$project" .git | sed 's/^[ -]*//')
 
+        if [ -d "$clean_name" ]; then
+            echo "--> Skipping $clean_name (folder already exists)"
+            continue
+        fi
+
         echo "--> Importing $clean_name from $project..."
 
         git subtree add --prefix="$clean_name" "$project" main
