@@ -1,0 +1,93 @@
+
+name: Deploy Frontend Mentor Projects
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Prepare deployment directory
+        run: |
+          mkdir -p _site
+
+          rsync -a ./ _site/ \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.migration' \
+            --exclude='node_modules' \
+            --exclude='_site' \
+            --exclude='.env*'
+
+          touch _site/.nojekyll
+
+      - name: Build Vite projects
+        shell: bash
+        run: |
+          for config in */vite.config.js; do
+            [ -f "$config" ] || continue
+
+            project="${config%/vite.config.js}"
+
+            echo "Building $project"
+
+            cd "$project"
+
+            npm ci
+            npm run build
+
+            cd ..
+
+            if [ ! -d "$project/dist" ]; then
+              echo "Build output missing for $project"
+              exit 1
+            fi
+
+            rm -rf "_site/$project"
+            mkdir -p "_site/$project"
+
+            cp -a "$project/dist/." "_site/$project/"
+          done
+
+      - name: Upload deployment artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
