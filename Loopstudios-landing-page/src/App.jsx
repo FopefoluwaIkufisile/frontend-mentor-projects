@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import Leader from "./components/Leader";
 import Creations from "./components/Creations";
-import Footer from "./components/Footer";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +28,6 @@ useEffect(() => {
       <Hero Open={open} Close={close} isOpen={isOpen} />
       <Leader />
       <Creations />
-      <Footer />
     </div>
   );
 };
