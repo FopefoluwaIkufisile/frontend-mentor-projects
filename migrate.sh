@@ -500,6 +500,8 @@ stage_report() {
 
 # ---------------------------------------------------------------- purge
 
+# ---------------------------------------------------------------- purge
+
 blocker() {
   # Arguments: folder owner repo old_url
 
@@ -507,7 +509,8 @@ blocker() {
   local owner="$2"
   local repo="$3"
   local old_url="$4"
-  local sha
+
+  local sha remote_commit remote_tree local_tree
 
   if [ "$(lc "$owner")" != "$(lc "$GH_USER")" ]; then
     echo "owner is not $GH_USER"
@@ -529,6 +532,7 @@ blocker() {
     return
   fi
 
+  # Get the latest commit from the original repository.
   sha=$(git ls-remote "$old_url" HEAD 2>/dev/null |
     awk 'NR == 1 { print $1 }' || true)
 
@@ -537,19 +541,44 @@ blocker() {
     return
   fi
 
-  # Full-history subtree import: original HEAD must be an ancestor.
+  # Check whether the original HEAD is already in monorepo history.
   if git merge-base --is-ancestor "$sha" HEAD 2>/dev/null; then
-    return
+    return 0
   fi
 
-  # Squashed subtree import: find its recorded source commit anywhere
-  # in the monorepo history, not just the latest commit.
+  # Check for a recorded subtree split.
   if git log --all --format=%B |
     grep -Fq "git-subtree-split: $sha"; then
+    return 0
+  fi
+
+  # Histories may be unrelated. Fetch the exact original commit
+  # and compare its complete tree with the monorepo project directory.
+  if ! git fetch --quiet "$old_url" "$sha" 2>/dev/null; then
+    echo "could not fetch original repository HEAD"
     return
   fi
 
-  echo "old HEAD $(printf '%s' "$sha" | cut -c1-7) is not verified in monorepo history"
+  remote_commit=$(git rev-parse --verify 'FETCH_HEAD^{commit}' 2>/dev/null) || {
+    echo "could not resolve original repository commit"
+    return
+  }
+
+  remote_tree=$(git rev-parse --verify "$remote_commit^{tree}" 2>/dev/null) || {
+    echo "could not inspect original repository tree"
+    return
+  }
+
+  local_tree=$(git rev-parse --verify "HEAD:$folder" 2>/dev/null) || {
+    echo "project directory is not committed"
+    return
+  }
+
+  if [ "$remote_tree" = "$local_tree" ]; then
+    return 0
+  fi
+
+  echo "original HEAD $(printf '%s' "$sha" | cut -c1-7) differs from monorepo project contents"
 }
 
 stage_purge() {
